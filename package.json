@@ -1,0 +1,34 @@
+{
+  "name": "vue-i18n-tools",
+  "version": "0.1.0",
+  "description": "Gettext tools to improve your internationalization workflow with Vue-i18n",
+  "main": "index.js",
+  "bin": {
+    "vue-i18n-tools": "bin/vue-i18n-tools"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimarulin/vue-i18n-tools.git"
+  },
+  "keywords": [
+    "vue",
+    "vue-i18n",
+    "gettext"
+  ],
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shimarulin/vue-i18n-tools/issues"
+  },
+  "homepage": "https://github.com/shimarulin/vue-i18n-tools#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@platr/eslint-config-base": "^0.1.0",
+    "eslint": "^5.10.0",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0"
+  }
+}
