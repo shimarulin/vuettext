@@ -1,34 +1,64 @@
 {
   "name": "vue-i18n-tools",
-  "version": "0.1.0",
   "description": "Gettext tools to improve your internationalization workflow with Vue-i18n",
-  "main": "index.js",
+  "version": "0.1.0",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "bin": {
-    "vue-i18n-tools": "bin/vue-i18n-tools"
+    "vue-i18n-tools": "./bin/run"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bugs": "https://github.com/shimarulin/vue-i18n-tools/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "tslib": "^1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shimarulin/vue-i18n-tools.git"
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "@oclif/tslint": "^3",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "chai": "^4",
+    "globby": "^8",
+    "mocha": "^5",
+    "nyc": "^13",
+    "ts-node": "^7",
+    "tslint": "^5",
+    "typescript": "^3.0"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/shimarulin/vue-i18n-tools",
   "keywords": [
     "vue",
     "vue-i18n",
     "gettext"
   ],
-  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shimarulin/vue-i18n-tools/issues"
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "vue-i18n-tools",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
   },
-  "homepage": "https://github.com/shimarulin/vue-i18n-tools#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "@platr/eslint-config-base": "^0.1.0",
-    "eslint": "^5.10.0",
-    "husky": "^1.2.0",
-    "lint-staged": "^8.1.0"
-  }
+  "repository": "shimarulin/vue-i18n-tools",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
 }
