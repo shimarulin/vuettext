@@ -11,6 +11,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "fast-glob": "^2.2.4",
     "tslib": "^1"
   },
   "devDependencies": {

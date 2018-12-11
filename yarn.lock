@@ -938,7 +938,7 @@ fancy-test@^1.4.1:
     mock-stdin "^0.3.1"
     stdout-stderr "^0.1.9"
 
-fast-glob@^2.0.2:
+fast-glob@^2.0.2, fast-glob@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-2.2.4.tgz#e54f4b66d378040e0e4d6a68ec36bbc5b04363c0"
   integrity sha512-FjK2nCGI/McyzgNtTESqaWP3trPvHyRyoyY70hxjc3oKPNmDe8taohLZpoVKoUjW85tbU5txaYUZCNtVzygl1g==
