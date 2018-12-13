@@ -19,6 +19,16 @@ const fill = (target: string[], src: string) => {
     .forEach((item: string) => { target.push(item) })
 }
 
+const ignoreFlagDescription = `Glob pattern to specify ignored files
+Expected string or separated comma strings`
+
+const outputFlagDescription = 'Path to output file'
+
+const patternArgDescription = `  Glob pattern to specify files to be extracting Vue-i18n strings.
+                           Expected string or separated comma strings
+                           Needs to be surrounded with quotes to prevent shell globbing.
+                           Guide to globs: https://github.com/isaacs/node-glob#glob-primer`
+
 export default class Xgettext extends Command {
   static description = 'Extract Vue-i18n strings from *.js and *.vue files to *.pot file'
 
@@ -27,14 +37,13 @@ export default class Xgettext extends Command {
       char: 'h'
     }),
     ignore: flags.string({
-      description: `Glob pattern to specify ignored files
-                    Expected string or separated comma strings`
+      description: ignoreFlagDescription
     }),
     output: flags.string({
       char: 'o',
       required: true,
       default: 'messages.pot',
-      description: 'Path to output file',
+      description: outputFlagDescription,
     }),
   }
 
@@ -42,10 +51,7 @@ export default class Xgettext extends Command {
     {
       name: 'pattern',
       required: true,
-      description: `  Glob pattern to specify files to be extracting Vue-i18n strings.
-                           Expected string or separated comma strings
-                           Needs to be surrounded with quotes to prevent shell globbing.
-                           Guide to globs: https://github.com/isaacs/node-glob#glob-primer`,
+      description: patternArgDescription,
       default: '**/*.{js,vue}',
     }
   ]
