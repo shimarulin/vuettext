@@ -1,6 +1,5 @@
 import {Command, flags} from '@oclif/command'
 import * as fg from 'fast-glob'
-import * as fs from 'fs'
 import * as path from 'path'
 
 const fill = (target: string[], src: string) => {
