@@ -1,6 +1,14 @@
 import {Command, flags} from '@oclif/command'
+import * as debug from 'debug'
 import * as fg from 'fast-glob'
 import * as path from 'path'
+
+import {SourceStringMetadataList} from '../common/parser-base'
+import {JsParser} from '../parsers/js-parser'
+
+// Run tests with env DEBUG=ctx
+// DEBUG=ctx yarn test
+const log = debug('ctx')
 
 const fill = (target: string[], src: string) => {
   src
@@ -53,22 +61,29 @@ export default class Xgettext extends Command {
     }
 
     try {
+      let result: SourceStringMetadataList = {}
       const fileList: string[] = await fg(patternList, {ignore: ignoreList})
       fileList.forEach((filePath: string) => {
         if (path.extname(filePath) === '.vue') {
           // const vueParser = new VueParser(filePath)
           // result = Object.assign({}, result, vueParser.parse(fs.readFileSync(filePath).toString()))
         } else if (path.extname(filePath) === '.js') {
-          // const jsParser = new JsParser(filePath)
-          // result = Object.assign({}, result, jsParser.parse(fs.readFileSync(filePath).toString()))
+          const jsParser = new JsParser(filePath)
+          jsParser.readFile()
+          jsParser.parse()
+          result = {...result, ...jsParser.result}
         }
       })
+
+      log(result)
+
+      this.log(args, flags, ignoreList, patternList)
+      const outputMessage = `Saved X messages from ${patternList} to ${flags.output}`
+
+      this.log(outputMessage)
     } catch (e) {
-      this.log('err', e)
+      this.log(e)
     }
 
-    // this.log(args, flags, ignoreList, patternList)
-    const outputMessage = `Saved X messages from ${patternList} to ${flags.output}`
-    this.log(outputMessage)
   }
 }

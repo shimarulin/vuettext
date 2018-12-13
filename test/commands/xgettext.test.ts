@@ -1,8 +1,8 @@
 import {expect, test} from '@oclif/test'
 import * as debug from 'debug'
 
-// Run tests with env DEBUG=ctx
-// DEBUG=ctx yarn test
+// Run tests with env DEBUG=stdout
+// DEBUG=stdout yarn test
 const log = debug('ctx')
 
 describe('xgettext', () => {
@@ -10,7 +10,6 @@ describe('xgettext', () => {
     .stdout()
     .command(['xgettext'])
     .it('runs xgettext without args', ctx => {
-      log(Object.keys(ctx))
       log(ctx.stdout)
       expect(ctx.stdout).to.contain('**/*.{js,vue}')
       expect(ctx.stdout).to.contain('messages.pot')
