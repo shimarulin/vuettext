@@ -4,11 +4,13 @@ import * as fg from 'fast-glob'
 import * as path from 'path'
 
 import {SourceStringMetadataList} from '../common/parser-base'
+import {writeFile} from '../common/write-file'
+import {gettextFormatter} from '../formatters/gettext-formatter'
 import {JsParser} from '../parsers/js-parser'
 
 // Run tests with env DEBUG=ctx
 // DEBUG=ctx yarn test
-const log = debug('ctx')
+const log = debug('cli')
 
 const fill = (target: string[], src: string) => {
   src
@@ -76,9 +78,14 @@ export default class Xgettext extends Command {
       })
 
       log(result)
+      log(args, flags, ignoreList, patternList)
 
-      this.log(args, flags, ignoreList, patternList)
-      const outputMessage = `Saved X messages from ${patternList} to ${flags.output}`
+      const content = gettextFormatter(result)
+      await writeFile(flags.output, content)
+
+      log(content)
+
+      const outputMessage = `Saved X messages from ${patternList} to file ${flags.output}`
 
       this.log(outputMessage)
     } catch (e) {

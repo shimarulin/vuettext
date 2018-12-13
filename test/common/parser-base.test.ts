@@ -2,7 +2,7 @@ import * as debug from 'debug'
 import {expect, fancy} from 'fancy-test'
 
 import {ParserBase} from '../../src/common/parser-base'
-import {jsFileExample} from '../fixtures/file-example-string'
+import {sampleJsFile} from '../fixtures/samples'
 
 // Run tests with env DEBUG=ctx
 // DEBUG=ctx yarn test
@@ -29,7 +29,7 @@ describe('ParserBase', () => {
       expect(ctx.parser).to.deep.equal({
         filePath: 'test/fixtures/call-translate.js',
         stringLocationOffset: 0,
-        content: jsFileExample
+        content: sampleJsFile
       })
     })
 

@@ -13,6 +13,7 @@
     "@oclif/plugin-help": "^2",
     "acorn": "^6.0.4",
     "fast-glob": "^2.2.4",
+    "moment": "^2.23.0",
     "tslib": "^1"
   },
   "devDependencies": {
