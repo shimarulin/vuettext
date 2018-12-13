@@ -10,7 +10,7 @@ import {sampleGettext, sampleSourceStringMetadataList} from '../fixtures/samples
 // DEBUG=execSync yarn test
 const log = debug('execSync')
 
-describe('ParserBase', () => {
+describe('gettextFormatter', () => {
   fancy
     .stub(momentProto, 'format', (str: string) => {
       if (str === 'YYYY-MM-DD hh:mmZZ') {
