@@ -7,6 +7,7 @@ import {SourceStringMetadataList} from '../common/parser-base'
 import {writeFile} from '../common/write-file'
 import {gettextFormatter} from '../formatters/gettext-formatter'
 import {JsParser} from '../parsers/js-parser'
+import {VueParser} from '../parsers/vue-parser'
 
 // Run tests with env DEBUG=ctx
 // DEBUG=ctx yarn test
@@ -73,8 +74,10 @@ export default class Xgettext extends Command {
       const fileList: string[] = await fg(patternList, {ignore: ignoreList})
       fileList.forEach((filePath: string) => {
         if (path.extname(filePath) === '.vue') {
-          // const vueParser = new VueParser(filePath)
-          // result = Object.assign({}, result, vueParser.parse(fs.readFileSync(filePath).toString()))
+          const vueParser = new VueParser(filePath)
+          vueParser.readFile()
+          vueParser.parse()
+          result = {...result, ...vueParser.result}
         } else if (path.extname(filePath) === '.js') {
           const jsParser = new JsParser(filePath)
           jsParser.readFile()

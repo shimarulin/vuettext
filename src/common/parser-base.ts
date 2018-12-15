@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 
 type SourceStringType = 'singular' | 'plural'
-type SourceStringOrigin = '$t' | '$tc'
+type SourceStringOrigin = '$t' | '$tc' | 'v-t string' | 'i18n component'
 
 export interface SourceStringMetadata {
   file: string

@@ -11,9 +11,11 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@types/parse5": "^5.0.0",
     "acorn": "^6.0.4",
     "fast-glob": "^2.2.4",
     "moment": "^2.23.0",
+    "parse5": "^5.1.0",
     "tslib": "^1"
   },
   "devDependencies": {
