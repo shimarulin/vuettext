@@ -3,10 +3,13 @@
 *.log
 
 ## Dependency directories
-node_modules/
+node_modules
 
-## Optional npm cache directory
-.npm
+/.nyc_output
+/dist
+/lib
+/package-lock.json
+/tmp
 
 ## dotenv environment variables file
 .env
