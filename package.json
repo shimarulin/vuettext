@@ -1,5 +1,5 @@
 {
-  "name": "vue-i18n-tools",
+  "name": "vettext",
   "description": "Gettext tools to improve your internationalization workflow with Vue-i18n",
   "version": "0.1.0",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
