@@ -1,9 +1,4 @@
-import * as debug from 'debug'
 import {expect, fancy} from 'fancy-test'
-
-// Run tests with env DEBUG=ctx
-// DEBUG=ctx yarn test
-const log = debug('ctx')
 
 import {JsParser} from '../../src/parsers/js-parser'
 
@@ -15,7 +10,6 @@ describe('JsParser', () => {
       ctx.parser.parse()
     })
     .it('parse file', ctx => {
-      log(ctx.parser.result)
       expect(ctx.parser.result).to.deep.equal({
         open: {
           file: 'test/fixtures/call-translate.js',
@@ -41,7 +35,6 @@ describe('JsParser', () => {
       ctx.parser.parse()
     })
     .it('parse string', ctx => {
-      log(ctx.parser.result)
       expect(ctx.parser.result).to.deep.equal({
         example: {
           file: 'test/fixtures/inline.vue',
@@ -60,7 +53,6 @@ describe('JsParser', () => {
       ctx.parser.parse()
     })
     .it('parse string literal', ctx => {
-      log(ctx.parser.result)
       expect(ctx.parser.result).to.deep.equal({
         of: {
           file: 'test/fixtures/call-translate-plural.js',

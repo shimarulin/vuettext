@@ -1,12 +1,7 @@
 import * as child_process from 'child_process'
-import * as debug from 'debug'
 import * as moment from 'moment'
 
 import {SourceStringMetadata, SourceStringMetadataList} from '../common/parser-base'
-
-// Run tests with env DEBUG=execSync
-// DEBUG=execSync yarn test
-const log = debug('execSync')
 
 const pkg = require(`${process.cwd()}/package.json`)
 
@@ -17,8 +12,6 @@ const getHeader = () => {
   const {execSync} = child_process
   const userName = execSync('git config user.name').toString().trim()
   const userEmail = execSync('git config user.email').toString().trim()
-  log('execSync git config user.name return: ', userName)
-  log('execSync git config user.email return: ', userEmail)
 
   return `# SOME DESCRIPTIVE TITLE.
 # Copyright (C) ${dateYear}

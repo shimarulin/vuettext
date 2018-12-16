@@ -1,9 +1,4 @@
-import * as debug from 'debug'
 import {expect, fancy} from 'fancy-test'
-
-// Run tests with env DEBUG=ctx
-// DEBUG=ctx yarn test
-const log = debug('vue_parser')
 
 import {VueParser} from '../../src/parsers/vue-parser'
 
@@ -15,7 +10,6 @@ describe('VueParser', () => {
       ctx.parser.parse()
     })
     .it('parse inline call $t in Vue single file component', ctx => {
-      log(ctx.parser.result)
       expect(ctx.parser.result).to.deep.equal({
         inline: {
           file: 'test/fixtures/inline.vue',
@@ -34,7 +28,6 @@ describe('VueParser', () => {
       ctx.parser.parse()
     })
     .it('parse inline call $tc in Vue single file component', ctx => {
-      log(ctx.parser.result)
       expect(ctx.parser.result).to.deep.equal({
         'inline-plural': {
           file: 'test/fixtures/inline-plural.vue',
@@ -53,7 +46,6 @@ describe('VueParser', () => {
       ctx.parser.parse()
     })
     .it('parse i18n component interpolation in Vue single file component', ctx => {
-      log(ctx.parser.result)
       expect(ctx.parser.result).to.deep.equal({
         term: {
           file: 'test/fixtures/component-interpolation.vue',
@@ -79,7 +71,6 @@ describe('VueParser', () => {
       ctx.parser.parse()
     })
     .it('parse advanced example of i18n component interpolation in Vue single file component', ctx => {
-      log(ctx.parser.result)
       expect(ctx.parser.result).to.deep.equal({
         term: {
           file: 'test/fixtures/component-interpolation.vue',
@@ -105,7 +96,6 @@ describe('VueParser', () => {
       ctx.parser.parse()
     })
     .it('parse custom v-t directive with string value in Vue single file component', ctx => {
-      log(ctx.parser.result)
       expect(ctx.parser.result).to.deep.equal({
         description: {
           file: 'test/fixtures/directive.vue',
