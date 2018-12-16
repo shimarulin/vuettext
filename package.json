@@ -1,12 +1,12 @@
 {
-  "name": "vettext",
+  "name": "vuettext",
   "description": "Gettext tools to improve your internationalization workflow with Vue-i18n",
   "version": "0.1.0",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "bin": {
-    "vue-i18n-tools": "./bin/run"
+    "vuettext": "./bin/run"
   },
-  "bugs": "https://github.com/shimarulin/vue-i18n-tools/issues",
+  "bugs": "https://github.com/shimarulin/vuettext/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -46,7 +46,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/shimarulin/vue-i18n-tools",
+  "homepage": "https://github.com/shimarulin/vuettext",
   "keywords": [
     "vue",
     "vue-i18n",
@@ -56,12 +56,15 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "vue-i18n-tools",
+    "bin": "vuettext",
     "plugins": [
       "@oclif/plugin-help"
     ]
   },
-  "repository": "shimarulin/vue-i18n-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shimarulin/vuettext.git"
+  },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
