@@ -1,5 +1,4 @@
 import {Command, flags} from '@oclif/command'
-import * as debug from 'debug'
 import * as fg from 'fast-glob'
 import * as path from 'path'
 
@@ -8,10 +7,6 @@ import {writeFile} from '../common/write-file'
 import {gettextFormatter} from '../formatters/gettext-formatter'
 import {JsParser} from '../parsers/js-parser'
 import {VueParser} from '../parsers/vue-parser'
-
-// Run tests with env DEBUG=ctx
-// DEBUG=ctx yarn test
-const log = debug('cli')
 
 const fill = (target: string[], src: string) => {
   src
@@ -86,13 +81,8 @@ export default class Xgettext extends Command {
         }
       })
 
-      log(result)
-      log(args, flags, ignoreList, patternList)
-
       const content = gettextFormatter(result)
       await writeFile(flags.output, content)
-
-      log(content)
 
       const outputMessage = `Saved X messages from ${patternList} to file ${flags.output}`
 

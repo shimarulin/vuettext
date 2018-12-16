@@ -1,9 +1,6 @@
 import {Node, parse, Token} from 'acorn/dist/acorn'
-import * as debug from 'debug'
 
 import {ParserBase, SourceStringMetadataList} from '../common/parser-base'
-
-const log = debug('js_parser')
 
 interface Property {
   name: string
@@ -72,17 +69,6 @@ export class JsParser extends ParserBase {
   parseNode(node: ChildNode): SourceStringMetadataList {
     let result = {}
     if (node.declaration) {
-      // this.filePath === 'test/fixtures/call-translate-plural.js' &&
-      // node.declaration.properties &&
-      // node.declaration.properties[1].value &&
-      // node.declaration.properties[1].value.properties &&
-      // node.declaration.properties[1].value.properties[0].value &&
-      // node.declaration.properties[1].value.properties[0].value.body &&
-      // !hasBodyNodesArray(node.declaration.properties[1].value.properties[0].value.body) &&
-      // node.declaration.properties[1].value.properties[0].value.body.body &&
-      // hasBodyNodesArray(node.declaration.properties[1].value.properties[0].value.body.body) &&
-      // log(node.declaration.properties[1].value.properties[0].value.body.body[0].argument.expressions)
-
       result = {...result, ...this.parseNode(node.declaration)}
     } else if (node.properties) {
       node.properties.forEach(childNode => {
@@ -146,8 +132,6 @@ export class JsParser extends ParserBase {
 
   parseExpression(expression: Expression): SourceStringMetadataList {
     let result: SourceStringMetadataList = {}
-
-    log(expression)
 
     if (!expression.callee) {
       return result
