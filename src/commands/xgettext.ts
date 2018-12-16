@@ -25,10 +25,10 @@ Expected string or separated comma strings`
 
 const outputFlagDescription = 'Path to output file'
 
-const patternArgDescription = `  Glob pattern to specify files to be extracting Vue-i18n strings.
-                           Expected string or separated comma strings
-                           Needs to be surrounded with quotes to prevent shell globbing.
-                           Guide to globs: https://github.com/isaacs/node-glob#glob-primer`
+const patternArgDescription = `Glob pattern to specify files to be extracting
+Vue-i18n strings. Expected string or separated comma strings
+Needs to be surrounded with quotes to prevent shell globbing.
+Guide to globs: https://github.com/isaacs/node-glob#glob-primer`
 
 export default class Xgettext extends Command {
   static description = 'Extract Vue-i18n strings from *.js and *.vue files to *.pot file'

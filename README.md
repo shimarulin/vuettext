@@ -29,7 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`vue-i18n-tools help [COMMAND]`](#vue-i-18-n-tools-help-command)
-* [`vue-i18n-tools xgettext [PATTERN]`](#vue-i-18-n-tools-xgettext-file)
+* [`vue-i18n-tools xgettext PATTERN`](#vue-i-18-n-tools-xgettext-pattern)
 
 ## `vue-i18n-tools help [COMMAND]`
 
@@ -48,23 +48,26 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
 
-## `vue-i18n-tools xgettext [PATTERN]`
+## `vue-i18n-tools xgettext PATTERN`
 
 Extract Vue-i18n strings from *.js and *.vue files to *.pot file
 
 ```
 USAGE
-  $ vue-i18n-tools xgettext [PATTERN]
+  $ vue-i18n-tools xgettext PATTERN
 
 ARGUMENTS
-  PATTERN  [default: **/*.{js,vue}]   Glob pattern to specify files to be extracting Vue-i18n strings.
-                                      Needs to be surrounded with quotes to prevent shell globbing.
-                                      Guide to globs: https://github.com/isaacs/node-glob#glob-primer
+  PATTERN  [default: **/*.{js,vue}] Glob pattern to specify files to be extracting Vue-i18n strings.
+           Expected string or separated comma strings
+           Needs to be surrounded with quotes to prevent shell globbing.
+           Guide to globs: https://github.com/isaacs/node-glob#glob-primer
 
 OPTIONS
   -h, --help           show CLI help
-  -o, --output=output  (required) [default: messages.pot] Path to output file
+  -o, --output=output  (required) [default: messages.pot] Path
+
   --ignore=ignore      Glob pattern to specify ignored files
+                       Expected string or separated comma strings
 ```
 
 _See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vue-i18n-tools/blob/v0.1.0/src/commands/xgettext.ts)_
