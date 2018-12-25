@@ -3,10 +3,11 @@ vuettext
 
 Gettext tools to improve your internationalization workflow with Vue-i18n
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![CircleCI](https://circleci.com/gh/shimarulin/vuettext.svg?style=svg)](https://circleci.com/gh/shimarulin/vuettext)
 [![Version](https://img.shields.io/npm/v/vuettext.svg)](https://npmjs.org/package/vuettext)
 [![Downloads/week](https://img.shields.io/npm/dw/vuettext.svg)](https://npmjs.org/package/vuettext)
 [![License](https://img.shields.io/npm/l/vuettext.svg)](https://github.com/shimarulin/vuettext/blob/master/package.json)
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
 <!-- toc -->
 * [Usage](#usage)
@@ -19,7 +20,7 @@ $ npm install -g vuettext
 $ vuettext COMMAND
 running command...
 $ vuettext (-v|--version|version)
-vuettext/0.1.0 linux-x64 node-v10.14.1
+vuettext/0.2.1 linux-x64 node-v10.14.1
 $ vuettext --help [COMMAND]
 USAGE
   $ vuettext COMMAND
@@ -70,5 +71,5 @@ OPTIONS
                        Expected string or separated comma strings
 ```
 
-_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.1.0/src/commands/xgettext.ts)_
+_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.2.1/src/commands/xgettext.ts)_
 <!-- commandsstop -->

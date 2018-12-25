@@ -1,7 +1,7 @@
 {
   "name": "vuettext",
   "description": "Gettext tools to improve your internationalization workflow with Vue-i18n",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "bin": {
     "vuettext": "./bin/run"
@@ -68,10 +68,10 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme && conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "types": "lib/index.d.ts"
 }
