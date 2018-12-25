@@ -34,3 +34,4 @@ node_modules
 
 ## Project temp files
 /messages.pot
+/locales

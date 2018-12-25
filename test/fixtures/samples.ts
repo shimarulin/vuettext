@@ -26,13 +26,13 @@ export const sampleSourceStringMetadataList: SourceStringMetadataList = {
 
 export const sampleGettext = `# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019
-# This file is distributed under the same license as the vue-i18n-tools package.
+# This file is distributed under the same license as the vuettext package.
 # V. Shimarulin <developer@test.com>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: vue-i18n-tools 0.1.0\\n"
+"Project-Id-Version: vuettext 0.1.0\\n"
 "Report-Msgid-Bugs-To: developer@test.com\\n"
 "POT-Creation-Date: 2019-01-13 11:31+0300\\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n"
