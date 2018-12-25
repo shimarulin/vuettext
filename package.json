@@ -1,7 +1,7 @@
 {
   "name": "vuettext",
   "description": "Gettext tools to improve your internationalization workflow with Vue-i18n",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "bin": {
     "vuettext": "./bin/run"
