@@ -1,6 +1,7 @@
 import * as child_process from 'child_process'
 import {expect, fancy} from 'fancy-test'
 import {fn as momentProto} from 'moment'
+const pkg = require(`${process.cwd()}/package.json`)
 
 import {gettextFormatter} from '../../src/formatters/gettext-formatter'
 import {sampleGettext, sampleSourceStringMetadataList} from '../fixtures/samples'
@@ -21,6 +22,7 @@ describe('gettextFormatter', () => {
         return Buffer.from('developer@test.com', 'utf8')
       }
     })
+    .stub(pkg, 'version', '0.1.0')
     .add('content', () => {
       return gettextFormatter(sampleSourceStringMetadataList)
     })
