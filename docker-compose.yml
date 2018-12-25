@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+
+  tests:
+    image: node:10.14.2
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+    - ./:/home/node/app
+    command: "/bin/sh -c 'yarn && yarn test'"
