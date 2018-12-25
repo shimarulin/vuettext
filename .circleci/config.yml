@@ -37,17 +37,17 @@ jobs:
       - persist_to_workspace:
           root: ~/vuettext
           paths: .
-#  deploy:
-#    <<: *defaults
-#    steps:
-#      - attach_workspace:
-#          at: ~/vuettext
-#      - run:
-#          name: Authenticate with registry
-#          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
-#      - run:
-#          name: Publish package
-#          command: npm publish
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/vuettext
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/vuettext/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
 
 workflows:
   version: 2
@@ -57,11 +57,11 @@ workflows:
           filters:
             tags:
               only: /^v.*/
-#      - deploy:
-#          requires:
-#            - test
-#          filters:
-#            tags:
-#              only: /^v.*/
-#            branches:
-#              ignore: /.*/
+      - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
