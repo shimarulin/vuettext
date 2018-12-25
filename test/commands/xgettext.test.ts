@@ -1,5 +1,5 @@
 import {expect, test} from '@oclif/test'
-import * as child_process from "child_process"
+import * as child_process from 'child_process'
 
 describe('xgettext', () => {
   test
