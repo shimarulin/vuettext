@@ -1,4 +1,4 @@
-# 0.1.0 (2018-12-25)
+# [0.2.0](https://github.com/shimarulin/vuettext/compare/66df976...v0.2.0) (2018-12-25)
 
 
 ### Features

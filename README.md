@@ -20,7 +20,7 @@ $ npm install -g vuettext
 $ vuettext COMMAND
 running command...
 $ vuettext (-v|--version|version)
-vuettext/0.2.0 linux-x64 node-v10.14.1
+vuettext/0.2.1 linux-x64 node-v10.14.1
 $ vuettext --help [COMMAND]
 USAGE
   $ vuettext COMMAND
@@ -71,5 +71,5 @@ OPTIONS
                        Expected string or separated comma strings
 ```
 
-_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.2.0/src/commands/xgettext.ts)_
+_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.2.1/src/commands/xgettext.ts)_
 <!-- commandsstop -->
