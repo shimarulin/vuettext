@@ -3,11 +3,11 @@ vuettext
 
 Gettext tools to improve your internationalization workflow with Vue-i18n
 
-[![CircleCI](https://circleci.com/gh/shimarulin/vuettext.svg?style=svg)](https://circleci.com/gh/shimarulin/vuettext)
 [![Version](https://img.shields.io/npm/v/vuettext.svg)](https://npmjs.org/package/vuettext)
+[![CircleCI](https://img.shields.io/circleci/project/github/shimarulin/vuettext.svg)](https://circleci.com/gh/shimarulin/vuettext)
 [![Downloads/week](https://img.shields.io/npm/dw/vuettext.svg)](https://npmjs.org/package/vuettext)
-[![License](https://img.shields.io/npm/l/vuettext.svg)](https://github.com/shimarulin/vuettext/blob/master/package.json)
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![License](https://img.shields.io/npm/l/vuettext.svg)](https://github.com/shimarulin/vuettext/blob/master/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
