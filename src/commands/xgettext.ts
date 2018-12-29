@@ -38,7 +38,7 @@ export default class Xgettext extends Command {
     output: flags.string({
       char: 'o',
       required: true,
-      default: 'messages.pot',
+      default: 'i18n/messages.pot',
       description: outputFlagDescription,
     }),
   }
