@@ -1,10 +1,10 @@
 import {expect, test} from '@oclif/test'
 import * as child_process from 'child_process'
-import * as del from 'del'
+// import * as del from 'del'
 
 describe('xgettext', () => {
   after(async () => {
-    await del('locales')
+    // await del('locales')
     // await del('i18n')
   })
 

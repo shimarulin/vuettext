@@ -1,5 +1,5 @@
 import {expect, test} from '@oclif/test'
-import * as del from 'del'
+// import * as del from 'del'
 import * as inquirer from 'inquirer'
 
 import {execCommand} from '../exec-command'
@@ -10,7 +10,7 @@ describe('msginit', async () => {
   })
 
   after(async () => {
-    await del('i18n')
+    // await del('i18n')
   })
 
   test
