@@ -10,11 +10,11 @@ import * as fs from 'fs'
 // DEBUG=ctx yarn test
 const log = debug('fs')
 
-import {execCommand} from '../exec-command'
+import {copy} from '../copy-file'
 
 describe('msginit', async () => {
   before(async () => {
-    await execCommand('xgettext')
+    await copy('test/fixtures/messages.pot', 'i18n/messages.pot')
     const currentDir = fs.readdirSync('./')
     const fileList: string[] = await fg(['**/*.pot'])
     log(currentDir)
@@ -23,6 +23,10 @@ describe('msginit', async () => {
 
   after(async () => {
     // await del('i18n')
+    const currentDir = fs.readdirSync('./')
+    const fileList: string[] = await fg(['**/*.pot'])
+    log(currentDir)
+    log(fileList)
   })
 
   test
