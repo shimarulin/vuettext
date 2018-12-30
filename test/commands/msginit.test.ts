@@ -2,11 +2,23 @@ import {expect, test} from '@oclif/test'
 // import * as del from 'del'
 import * as inquirer from 'inquirer'
 
+import * as debug from 'debug'
+import * as fg from 'fast-glob'
+import * as fs from 'fs'
+
+// Run tests with env DEBUG=ctx
+// DEBUG=ctx yarn test
+const log = debug('fs')
+
 import {execCommand} from '../exec-command'
 
 describe('msginit', async () => {
   before(async () => {
     await execCommand('xgettext')
+    const currentDir = fs.readdirSync('./')
+    const fileList: string[] = await fg(['**/*.pot'])
+    log(currentDir)
+    log(fileList)
   })
 
   after(async () => {
