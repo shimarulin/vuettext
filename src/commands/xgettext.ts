@@ -84,7 +84,7 @@ export default class Xgettext extends Command {
       const content = gettextFormatter(result)
       await writeFile(flags.output, content)
 
-      const outputMessage = `Saved ${Object.keys(result).length} messages to file ${flags.output}`
+      const outputMessage = `Saved ${Object.keys(result).length} messages from ${args.pattern} to ${flags.output}`
 
       this.log(outputMessage)
     } catch (e) {

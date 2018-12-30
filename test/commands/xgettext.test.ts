@@ -14,7 +14,7 @@ describe('xgettext', () => {
     .command(['xgettext'])
     .it('runs xgettext without args', ctx => {
       expect(ctx.stdout).to.contain('**/*.{js,vue}')
-      expect(ctx.stdout).to.contain('messages.pot')
+      expect(ctx.stdout).to.contain('i18n/messages.pot')
     })
 
   test
