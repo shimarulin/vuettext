@@ -30,6 +30,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`vuettext help [COMMAND]`](#vuettext-help-command)
+* [`vuettext msginit [FILE]`](#vuettext-msginit-file)
 * [`vuettext xgettext PATTERN`](#vuettext-xgettext-pattern)
 
 ## `vuettext help [COMMAND]`
@@ -48,6 +49,22 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
+
+## `vuettext msginit [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ vuettext msginit [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.2.1/src/commands/msginit.ts)_
 
 ## `vuettext xgettext PATTERN`
 
