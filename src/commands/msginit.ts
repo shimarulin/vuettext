@@ -75,9 +75,7 @@ export default class Msginit extends Command {
     }),
     output: flags.string({
       char: 'o',
-      // required: true,
-      // default: 'i18n/locales/ru_RU/messages.po',
-      description: '',
+      description: 'Path to output file',
     }),
   }
 
@@ -92,7 +90,7 @@ export default class Msginit extends Command {
 
   async run() {
     const {args, flags} = this.parse(Msginit)
-    const {execSync} = child_process
+    const {exec} = child_process
 
     const answers = await inquirer
       .prompt([
@@ -114,12 +112,24 @@ export default class Msginit extends Command {
     const locale: string = flags.locale || answers.languageCode
     const output: string = flags.output || path.join(path.dirname(args.file), `locales/${locale}.po`)
 
-    mkpath(output)
-      .then(() => {
-        execSync(`msginit --input=${args.file} --locale=${locale} --no-wrap --no-translator --output-file=${output}`)
+    try {
+      await mkpath(output)
+      const outputMessage: string = await new Promise(resolve => {
+        exec(
+          `msginit --input=${args.file} --locale=${locale} --no-wrap --no-translator --output-file=${output}`,
+          // tslint:disable-next-line:no-unused
+          (err, stdout, stderr) => {
+            if (err) throw err
+
+            /**
+             * Unexpected behavior: msginit always returns result to stderr
+             */
+            resolve(stderr.trim())
+          })
       })
-      .catch((err: Error) => {
-        if (err) throw err
-      })
+      this.log(outputMessage)
+    } catch (e) {
+      this.log(e)
+    }
   }
 }

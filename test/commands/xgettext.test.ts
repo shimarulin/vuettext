@@ -1,5 +1,6 @@
 import {expect, test} from '@oclif/test'
 import * as child_process from 'child_process'
+import * as del from 'del'
 
 describe('xgettext', () => {
   test
@@ -12,9 +13,11 @@ describe('xgettext', () => {
     })
     .stdout()
     .command(['xgettext'])
-    .it('runs xgettext without args', ctx => {
+    .it('runs xgettext without args', async ctx => {
       expect(ctx.stdout).to.contain('**/*.{js,vue}')
       expect(ctx.stdout).to.contain('i18n/messages.pot')
+
+      await del('i18n')
     })
 
   test
@@ -27,8 +30,10 @@ describe('xgettext', () => {
     })
     .stdout()
     .command(['xgettext', '--output', 'locales/msg.pot'])
-    .it('runs xgettext --output locales/msg.pot', ctx => {
+    .it('runs xgettext --output locales/msg.pot', async ctx => {
       expect(ctx.stdout).to.contain('locales/msg.pot')
+
+      await del('locales')
     })
 
   test
@@ -41,8 +46,10 @@ describe('xgettext', () => {
     })
     .stdout()
     .command(['xgettext', 'src/**/*.vue'])
-    .it('runs xgettext src/**/*.vue', ctx => {
+    .it('runs xgettext src/**/*.vue', async ctx => {
       expect(ctx.stdout).to.contain('src/**/*.vue')
+
+      await del('i18n')
     })
 
   test
@@ -55,8 +62,10 @@ describe('xgettext', () => {
     })
     .stdout()
     .command(['xgettext', '--output', 'locales/msg.pot', 'src/**/*.vue'])
-    .it('runs xgettext --output locales/msg.pot src/**/*.vue', ctx => {
+    .it('runs xgettext --output locales/msg.pot src/**/*.vue', async ctx => {
       expect(ctx.stdout).to.contain('locales/msg.pot')
       expect(ctx.stdout).to.contain('src/**/*.vue')
+
+      await del('locales')
     })
 })
