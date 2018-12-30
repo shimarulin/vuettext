@@ -6,8 +6,9 @@ import {execCommand} from '../exec-command'
 
 describe('msginit', async () => {
   test
-    .do(async () => {
+    .add('xgettext', async () => {
       await execCommand('xgettext')
+      return true
     })
     .stub(inquirer, 'prompt', () => Promise.resolve({languageCode: 'ru'}))
     .stub(inquirer, 'registerPrompt', () => {
@@ -22,8 +23,9 @@ describe('msginit', async () => {
     })
 
   test
-    .do(async () => {
+    .add('xgettext', async () => {
       await execCommand('xgettext')
+      return true
     })
     .stdout()
     .command(['msginit', '--locale', 'ru_RU'])
