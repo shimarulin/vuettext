@@ -2,10 +2,22 @@ import {expect, test} from '@oclif/test'
 import * as child_process from 'child_process'
 // import * as del from 'del'
 
+import * as fs from 'fs'
+import * as debug from 'debug'
+import * as fg from 'fast-glob'
+
+// Run tests with env DEBUG=ctx
+// DEBUG=ctx yarn test
+const log = debug('fs')
+
 describe('xgettext', () => {
   after(async () => {
     // await del('locales')
     // await del('i18n')
+    const currentDir = fs.readdirSync('./')
+    const fileList: string[] = await fg(['**/*.pot'])
+    log(currentDir)
+    log(fileList)
   })
 
   test

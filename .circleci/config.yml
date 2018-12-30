@@ -30,7 +30,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: yarn test
+          command: DEBUG=fs yarn test
 
       - save_cache:
           name: Save Yarn Package Cache
