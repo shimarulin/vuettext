@@ -38,7 +38,7 @@ export default class Xgettext extends Command {
     output: flags.string({
       char: 'o',
       required: true,
-      default: 'messages.pot',
+      default: 'i18n/messages.pot',
       description: outputFlagDescription,
     }),
   }
@@ -84,7 +84,7 @@ export default class Xgettext extends Command {
       const content = gettextFormatter(result)
       await writeFile(flags.output, content)
 
-      const outputMessage = `Saved X messages from ${patternList} to file ${flags.output}`
+      const outputMessage = `Saved ${Object.keys(result).length} messages from ${args.pattern} to ${flags.output}`
 
       this.log(outputMessage)
     } catch (e) {

@@ -2,7 +2,8 @@ version: "3.7"
 services:
 
   tests:
-    image: node:10.14.2
+    image: test/node:10.14.2
+    build: .
     user: "node"
     working_dir: /home/node/app
     volumes:

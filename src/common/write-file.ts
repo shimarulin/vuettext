@@ -1,15 +1,16 @@
 import * as fs from 'fs'
-import * as path from 'path'
+
+import {mkpath} from './mkpath'
 
 export const writeFile = (filePath: string, data: string) => {
   return new Promise(resolve => {
-    const dirPath = path.dirname(filePath)
-    fs.mkdir(dirPath, {
-      recursive: true,
-    }, (err: Error) => {
-      if (err) throw err
-      fs.writeFileSync(filePath, data)
-      resolve()
-    })
+    mkpath(filePath)
+      .then(() => {
+        fs.writeFileSync(filePath, data)
+        resolve()
+      })
+      .catch((err: Error) => {
+        if (err) throw err
+      })
   })
 }

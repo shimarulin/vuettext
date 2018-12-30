@@ -35,3 +35,4 @@ node_modules
 ## Project temp files
 /messages.pot
 /locales
+/i18n
