@@ -3,6 +3,11 @@ import * as child_process from 'child_process'
 import * as del from 'del'
 
 describe('xgettext', () => {
+  after(async () => {
+    await del('locales')
+    await del('i18n')
+  })
+
   test
     .stub(child_process, 'execSync', (str: string) => {
       if (str === 'git config user.name') {
@@ -16,8 +21,6 @@ describe('xgettext', () => {
     .it('runs xgettext without args', async ctx => {
       expect(ctx.stdout).to.contain('**/*.{js,vue}')
       expect(ctx.stdout).to.contain('i18n/messages.pot')
-
-      await del('i18n')
     })
 
   test
@@ -32,8 +35,6 @@ describe('xgettext', () => {
     .command(['xgettext', '--output', 'locales/msg.pot'])
     .it('runs xgettext --output locales/msg.pot', async ctx => {
       expect(ctx.stdout).to.contain('locales/msg.pot')
-
-      await del('locales')
     })
 
   test
@@ -48,8 +49,6 @@ describe('xgettext', () => {
     .command(['xgettext', 'src/**/*.vue'])
     .it('runs xgettext src/**/*.vue', async ctx => {
       expect(ctx.stdout).to.contain('src/**/*.vue')
-
-      await del('i18n')
     })
 
   test
@@ -65,7 +64,5 @@ describe('xgettext', () => {
     .it('runs xgettext --output locales/msg.pot src/**/*.vue', async ctx => {
       expect(ctx.stdout).to.contain('locales/msg.pot')
       expect(ctx.stdout).to.contain('src/**/*.vue')
-
-      await del('locales')
     })
 })
