@@ -21,6 +21,10 @@ jobs:
             - yarn-packages-{{ checksum "yarn.lock" }}
 
       - run:
+          name: Install gettext
+          command: sudo apt-get install gettext
+
+      - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
 
