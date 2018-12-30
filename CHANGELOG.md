@@ -1,3 +1,23 @@
+# [0.3.0](https://github.com/shimarulin/vuettext/compare/v0.2.1...v0.3.0) (2018-12-30)
+
+
+### Bug Fixes
+
+* **circleci:** install gettext ([7ef8b0b](https://github.com/shimarulin/vuettext/commit/7ef8b0b))
+* **ts-node:** missing types ([1a2053a](https://github.com/shimarulin/vuettext/commit/1a2053a))
+* **xgettext:** not informative output string ([a7665d9](https://github.com/shimarulin/vuettext/commit/a7665d9))
+
+
+### Features
+
+* **msginit:** add msginit command ([ee0a1d3](https://github.com/shimarulin/vuettext/commit/ee0a1d3))
+
+
+
+## [0.2.1](https://github.com/shimarulin/vuettext/compare/v0.2.0...v0.2.1) (2018-12-25)
+
+
+
 # [0.2.0](https://github.com/shimarulin/vuettext/compare/66df976...v0.2.0) (2018-12-25)
 
 

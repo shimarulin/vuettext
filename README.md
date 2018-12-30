@@ -20,7 +20,7 @@ $ npm install -g vuettext
 $ vuettext COMMAND
 running command...
 $ vuettext (-v|--version|version)
-vuettext/0.2.1 linux-x64 node-v10.14.1
+vuettext/0.3.0 linux-x64 node-v10.14.1
 $ vuettext --help [COMMAND]
 USAGE
   $ vuettext COMMAND
@@ -30,7 +30,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`vuettext help [COMMAND]`](#vuettext-help-command)
-* [`vuettext msginit [FILE]`](#vuettext-msginit-file)
+* [`vuettext msginit FILE`](#vuettext-msginit-file)
 * [`vuettext xgettext PATTERN`](#vuettext-xgettext-pattern)
 
 ## `vuettext help [COMMAND]`
@@ -50,21 +50,38 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
 
-## `vuettext msginit [FILE]`
+## `vuettext msginit FILE`
 
-describe the command here
+Initialize language translation (*.po file for selected language)
 
 ```
 USAGE
-  $ vuettext msginit [FILE]
+  $ vuettext msginit FILE
+
+ARGUMENTS
+  FILE  [default: i18n/messages.pot] Input *.pot file
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help
+      show CLI help
+
+  -l, --locale=locale
+      language code of the language. This can be in one of three forms:
+      - 'll', an ISO 639 two-letter language code (lowercase). See Language Codes for the list of codes.
+      - 'll_CC', where 'll' is an ISO 639 two-letter language code (lowercase) and 'CC' is an ISO 3166
+         two-letter country code (uppercase). The country code specification is not redundant: Some languages
+         have dialects in different countries. For example, 'de_AT' is used for Austria, and 'pt_BR' for Brazil.
+         The country code serves to distinguish the dialects. See Language Codes and Country Codes for
+         the lists of codes.
+      - 'll_CC@variant', where 'll' is an ISO 639 two-letter language code (lowercase), 'CC' is an ISO 3166
+         two-letter country code (uppercase), and 'variant' is a variant designator. The variant designator
+         (lowercase) can be a script designator, such as 'latin' or 'cyrillic'.
+
+  -o, --output=output
+      Path to output file
 ```
 
-_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.2.1/src/commands/msginit.ts)_
+_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.3.0/src/commands/msginit.ts)_
 
 ## `vuettext xgettext PATTERN`
 
@@ -82,11 +99,11 @@ ARGUMENTS
 
 OPTIONS
   -h, --help           show CLI help
-  -o, --output=output  (required) [default: messages.pot] Path to output file
+  -o, --output=output  (required) [default: i18n/messages.pot] Path to output file
 
   --ignore=ignore      Glob pattern to specify ignored files
                        Expected string or separated comma strings
 ```
 
-_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.2.1/src/commands/xgettext.ts)_
+_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.3.0/src/commands/xgettext.ts)_
 <!-- commandsstop -->
