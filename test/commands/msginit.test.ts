@@ -6,7 +6,7 @@ import {copy} from '../copy-file'
 
 describe('msginit', async () => {
   before(async () => {
-    await copy('test/fixtures/messages.pot', 'i18n/messages.pot')
+    await copy('test/fixtures/msginit/messages.pot', 'i18n/messages.pot')
   })
 
   after(async () => {
