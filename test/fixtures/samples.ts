@@ -83,3 +83,7 @@ export const sampleJsFile = `export default {
   },
 }
 `
+export const sampleMsgmergeOutputRu = `
+i18n/locales/ru_RU.po:
+Прочитано сообщений: старых 1 + новых 1; объединено 12, помечено неточными 1, недостающих 1, недействительных 1.
+`

@@ -23,9 +23,7 @@ msgid_plural "apple"
 msgstr[0] ""
 msgstr[1] ""
 
-#: test/fixtures/xgettext/call-translate-plural.js:8
-msgid "of"
-msgstr ""
+# "of" from test/fixtures/xgettext/call-translate-plural.js:8 was deleted
 
 #: test/fixtures/xgettext/call-translate.js:7
 msgid "open"
@@ -37,6 +35,11 @@ msgstr ""
 
 #: test/fixtures/xgettext/component-interpolation-advanced.vue:4
 msgid "info"
+msgstr ""
+
+# "help" was added
+#: test/fixtures/xgettext/component-interpolation-advanced.vue:5
+msgid "help"
 msgstr ""
 
 #: test/fixtures/xgettext/component-interpolation-advanced.vue:6
@@ -61,13 +64,15 @@ msgid_plural "inline-plural-count"
 msgstr[0] ""
 msgstr[1] ""
 
+# "inline-plural-n" renamed to "inline-plural-num-renamed"
 #: test/fixtures/xgettext/inline-plural-n.vue:2
-msgid "inline-plural-n"
-msgid_plural "inline-plural-n"
+msgid "inline-plural-num-renamed"
+msgid_plural "inline-plural-num-renamed"
 msgstr[0] ""
 msgstr[1] ""
 
-#: test/fixtures/xgettext/inline-plural.vue:2
+# "inline-plural" moved from 2 to 5
+#: test/fixtures/xgettext/inline-plural.vue:5
 msgid "inline-plural"
 msgid_plural "inline-plural"
 msgstr[0] ""
