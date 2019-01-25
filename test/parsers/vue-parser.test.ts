@@ -4,7 +4,7 @@ import {VueParser} from '../../src/parsers/vue-parser'
 
 describe('VueParser', () => {
   fancy
-    .add('parser', () => new VueParser('test/fixtures/inline.vue'))
+    .add('parser', () => new VueParser('test/fixtures/xgettext/inline.vue'))
     .do(ctx => {
       ctx.parser.readFile()
       ctx.parser.parse()
@@ -12,7 +12,7 @@ describe('VueParser', () => {
     .it('parse inline call $t in Vue single file component', ctx => {
       expect(ctx.parser.result).to.deep.equal({
         inline: {
-          file: 'test/fixtures/inline.vue',
+          file: 'test/fixtures/xgettext/inline.vue',
           line: 2,
           origin: '$t',
           type: 'singular',
@@ -22,7 +22,7 @@ describe('VueParser', () => {
     })
 
   fancy
-    .add('parser', () => new VueParser('test/fixtures/inline-plural.vue'))
+    .add('parser', () => new VueParser('test/fixtures/xgettext/inline-plural.vue'))
     .do(ctx => {
       ctx.parser.readFile()
       ctx.parser.parse()
@@ -30,7 +30,7 @@ describe('VueParser', () => {
     .it('parse inline call $tc in Vue single file component', ctx => {
       expect(ctx.parser.result).to.deep.equal({
         'inline-plural': {
-          file: 'test/fixtures/inline-plural.vue',
+          file: 'test/fixtures/xgettext/inline-plural.vue',
           line: 2,
           origin: '$tc',
           type: 'plural',
@@ -40,7 +40,7 @@ describe('VueParser', () => {
     })
 
   fancy
-    .add('parser', () => new VueParser('test/fixtures/component-interpolation.vue'))
+    .add('parser', () => new VueParser('test/fixtures/xgettext/component-interpolation.vue'))
     .do(ctx => {
       ctx.parser.readFile()
       ctx.parser.parse()
@@ -48,14 +48,14 @@ describe('VueParser', () => {
     .it('parse i18n component interpolation in Vue single file component', ctx => {
       expect(ctx.parser.result).to.deep.equal({
         term: {
-          file: 'test/fixtures/component-interpolation.vue',
+          file: 'test/fixtures/xgettext/component-interpolation.vue',
           line: 4,
           origin: 'i18n component',
           type: 'singular',
           value: 'term'
         },
         tos: {
-          file: 'test/fixtures/component-interpolation.vue',
+          file: 'test/fixtures/xgettext/component-interpolation.vue',
           line: 5,
           origin: '$t',
           type: 'singular',
@@ -65,7 +65,7 @@ describe('VueParser', () => {
     })
 
   fancy
-    .add('parser', () => new VueParser('test/fixtures/component-interpolation.vue'))
+    .add('parser', () => new VueParser('test/fixtures/xgettext/component-interpolation.vue'))
     .do(ctx => {
       ctx.parser.readFile()
       ctx.parser.parse()
@@ -73,14 +73,14 @@ describe('VueParser', () => {
     .it('parse advanced example of i18n component interpolation in Vue single file component', ctx => {
       expect(ctx.parser.result).to.deep.equal({
         term: {
-          file: 'test/fixtures/component-interpolation.vue',
+          file: 'test/fixtures/xgettext/component-interpolation.vue',
           line: 4,
           origin: 'i18n component',
           type: 'singular',
           value: 'term'
         },
         tos: {
-          file: 'test/fixtures/component-interpolation.vue',
+          file: 'test/fixtures/xgettext/component-interpolation.vue',
           line: 5,
           origin: '$t',
           type: 'singular',
@@ -90,7 +90,7 @@ describe('VueParser', () => {
     })
 
   fancy
-    .add('parser', () => new VueParser('test/fixtures/directive.vue'))
+    .add('parser', () => new VueParser('test/fixtures/xgettext/directive.vue'))
     .do(ctx => {
       ctx.parser.readFile()
       ctx.parser.parse()
@@ -98,7 +98,7 @@ describe('VueParser', () => {
     .it('parse custom v-t directive with string value in Vue single file component', ctx => {
       expect(ctx.parser.result).to.deep.equal({
         description: {
-          file: 'test/fixtures/directive.vue',
+          file: 'test/fixtures/xgettext/directive.vue',
           line: 3,
           origin: 'v-t string',
           type: 'singular',

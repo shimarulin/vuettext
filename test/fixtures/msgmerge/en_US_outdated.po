@@ -1,0 +1,78 @@
+# English translations for vuettext package.
+# Copyright (C) 2019
+# This file is distributed under the same license as the vuettext package.
+# V. Shimarulin <developer@test.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vuettext 0.3.0\n"
+"Report-Msgid-Bugs-To: developer@test.com\n"
+"POT-Creation-Date: 2019-01-22 10:43+0300\n"
+"PO-Revision-Date: 2019-01-22 10:43+0300\n"
+"Last-Translator: V. Shimarulin <developer@test.com>\n"
+"Language-Team: none\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: test/fixtures/xgettext/call-translate-plural.js:8
+msgid "apple"
+msgid_plural "apple"
+msgstr[0] "apple"
+msgstr[1] "apples"
+
+#: test/fixtures/xgettext/call-translate-plural.js:8
+msgid "of"
+msgstr "of"
+
+#: test/fixtures/xgettext/call-translate.js:7
+msgid "open"
+msgstr "open"
+
+#: test/fixtures/xgettext/call-translate.js:7
+msgid "closed"
+msgstr "closed"
+
+#: test/fixtures/xgettext/component-interpolation-advanced.vue:4
+msgid "info"
+msgstr "info"
+
+#: test/fixtures/xgettext/component-interpolation-advanced.vue:6
+msgid "change"
+msgstr "change"
+
+#: test/fixtures/xgettext/component-interpolation.vue:4
+msgid "term"
+msgstr "term"
+
+#: test/fixtures/xgettext/component-interpolation.vue:5
+msgid "tos"
+msgstr "definition"
+
+#: test/fixtures/xgettext/directive.vue:3
+msgid "description"
+msgstr "description"
+
+#: test/fixtures/xgettext/inline-plural-count.vue:2
+msgid "inline-plural-count"
+msgid_plural "inline-plural-count"
+msgstr[0] "counter"
+msgstr[1] "counters"
+
+#: test/fixtures/xgettext/inline-plural-n.vue:2
+msgid "inline-plural-n"
+msgid_plural "inline-plural-n"
+msgstr[0] "pear"
+msgstr[1] "pears"
+
+#: test/fixtures/xgettext/inline-plural.vue:2
+msgid "inline-plural"
+msgid_plural "inline-plural"
+msgstr[0] "tomato"
+msgstr[1] "tomatoes"
+
+#: test/fixtures/xgettext/inline.vue:2
+msgid "inline"
+msgstr "inline"

@@ -2,18 +2,12 @@ import {Command, flags} from '@oclif/command'
 import * as fg from 'fast-glob'
 import * as path from 'path'
 
+import {fillList} from '../common/fill-list'
 import {SourceStringMetadataList} from '../common/parser-base'
 import {writeFile} from '../common/write-file'
 import {gettextFormatter} from '../formatters/gettext-formatter'
 import {JsParser} from '../parsers/js-parser'
 import {VueParser} from '../parsers/vue-parser'
-
-const fill = (target: string[], src: string) => {
-  src
-    .split(/,(?!\w+})/g)
-    .map((item: string) => item.trim())
-    .forEach((item: string) => { target.push(item) })
-}
 
 const ignoreFlagDescription = `Glob pattern to specify ignored files
 Expected string or separated comma strings`
@@ -58,10 +52,10 @@ export default class Xgettext extends Command {
     const ignoreList: string[] = ['node_modules']
     const patternList: string[] = []
 
-    fill(patternList, args.pattern)
+    fillList(patternList, args.pattern)
 
     if (flags.ignore) {
-      fill(ignoreList, flags.ignore)
+      fillList(ignoreList, flags.ignore)
     }
 
     try {

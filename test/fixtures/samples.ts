@@ -2,21 +2,21 @@ import {SourceStringMetadataList} from '../../src/common/parser-base'
 
 export const sampleSourceStringMetadataList: SourceStringMetadataList = {
   apple: {
-    file: 'test/fixtures/call-translate-plural.js',
+    file: 'test/fixtures/xgettext/call-translate-plural.js',
     line: 8,
     origin: '$tc',
     type: 'plural',
     value: 'apple'
   },
   of: {
-    file: 'test/fixtures/call-translate-plural.js',
+    file: 'test/fixtures/xgettext/call-translate-plural.js',
     line: 8,
     origin: '$t',
     type: 'singular',
     value: 'of'
   },
   open: {
-    file: 'test/fixtures/call-translate.js',
+    file: 'test/fixtures/xgettext/call-translate.js',
     line: 7,
     origin: '$t',
     type: 'singular',
@@ -43,17 +43,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\\n"
 "Content-Transfer-Encoding: 8bit\\n"
 
-#: test/fixtures/call-translate-plural.js:8
+#: test/fixtures/xgettext/call-translate-plural.js:8
 msgid "apple"
 msgid_plural "apple"
 msgstr[0] ""
 msgstr[1] ""
 
-#: test/fixtures/call-translate-plural.js:8
+#: test/fixtures/xgettext/call-translate-plural.js:8
 msgid "of"
 msgstr ""
 
-#: test/fixtures/call-translate.js:7
+#: test/fixtures/xgettext/call-translate.js:7
 msgid "open"
 msgstr ""
 
@@ -82,4 +82,8 @@ export const sampleJsFile = `export default {
     },
   },
 }
+`
+export const sampleMsgmergeOutputRu = `
+i18n/locales/ru_RU.po:
+Прочитано сообщений: старых 1 + новых 1; объединено 12, помечено неточными 1, недостающих 1, недействительных 1.
 `

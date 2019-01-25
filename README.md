@@ -31,6 +31,7 @@ USAGE
 <!-- commands -->
 * [`vuettext help [COMMAND]`](#vuettext-help-command)
 * [`vuettext msginit FILE`](#vuettext-msginit-file)
+* [`vuettext msgmerge [FILE]`](#vuettext-msgmerge-file)
 * [`vuettext xgettext PATTERN`](#vuettext-xgettext-pattern)
 
 ## `vuettext help [COMMAND]`
@@ -82,6 +83,22 @@ OPTIONS
 ```
 
 _See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.3.0/src/commands/msginit.ts)_
+
+## `vuettext msgmerge [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ vuettext msgmerge [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/msgmerge.ts](https://github.com/shimarulin/vuettext/blob/v0.3.0/src/commands/msgmerge.ts)_
 
 ## `vuettext xgettext PATTERN`
 
