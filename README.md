@@ -20,7 +20,7 @@ $ npm install -g vuettext
 $ vuettext COMMAND
 running command...
 $ vuettext (-v|--version|version)
-vuettext/0.3.0 linux-x64 node-v10.14.1
+vuettext/0.4.0 linux-x64 node-v11.6.0
 $ vuettext --help [COMMAND]
 USAGE
   $ vuettext COMMAND
@@ -31,7 +31,7 @@ USAGE
 <!-- commands -->
 * [`vuettext help [COMMAND]`](#vuettext-help-command)
 * [`vuettext msginit FILE`](#vuettext-msginit-file)
-* [`vuettext msgmerge [FILE]`](#vuettext-msgmerge-file)
+* [`vuettext msgmerge`](#vuettext-msgmerge)
 * [`vuettext xgettext PATTERN`](#vuettext-xgettext-pattern)
 
 ## `vuettext help [COMMAND]`
@@ -82,23 +82,31 @@ OPTIONS
       Path to output file
 ```
 
-_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.3.0/src/commands/msginit.ts)_
+_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.4.0/src/commands/msginit.ts)_
 
-## `vuettext msgmerge [FILE]`
+## `vuettext msgmerge`
 
-describe the command here
+Merge outdated messages (*.po files) and updated *.pot template
 
 ```
 USAGE
-  $ vuettext msgmerge [FILE]
+  $ vuettext msgmerge
 
 OPTIONS
-  -f, --force
+  -d, --def=def    (required) [default: i18n/locales/*.po] Glob pattern to specify message *.po files. Expected string
+                   or separated comma strings
+                   Needs to be surrounded with quotes to prevent shell globbing.
+                   Guide to globs: https://github.com/isaacs/node-glob#glob-primer
+
   -h, --help       show CLI help
-  -n, --name=name  name to print
+
+  -r, --ref=ref    (required) [default: i18n/messages.pot] Path to updated reference file (*.pot template)
+
+  --ignore=ignore  Glob pattern to specify ignored files
+                   Expected string or separated comma strings
 ```
 
-_See code: [src/commands/msgmerge.ts](https://github.com/shimarulin/vuettext/blob/v0.3.0/src/commands/msgmerge.ts)_
+_See code: [src/commands/msgmerge.ts](https://github.com/shimarulin/vuettext/blob/v0.4.0/src/commands/msgmerge.ts)_
 
 ## `vuettext xgettext PATTERN`
 
@@ -122,5 +130,5 @@ OPTIONS
                        Expected string or separated comma strings
 ```
 
-_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.3.0/src/commands/xgettext.ts)_
+_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.4.0/src/commands/xgettext.ts)_
 <!-- commandsstop -->

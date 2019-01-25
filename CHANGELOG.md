@@ -1,3 +1,13 @@
+# [0.4.0](https://github.com/shimarulin/vuettext/compare/v0.3.0...v0.4.0) (2019-01-25)
+
+
+### Features
+
+* **msginit:** add msgmerge command ([1d7d758](https://github.com/shimarulin/vuettext/commit/1d7d758))
+* **msgmerge:** update msgmerge command with globbing support ([2310625](https://github.com/shimarulin/vuettext/commit/2310625))
+
+
+
 # [0.3.0](https://github.com/shimarulin/vuettext/compare/v0.2.1...v0.3.0) (2018-12-30)
 
 
