@@ -1,5 +1,42 @@
 # Notes
 
+## Zero-count flag
+
+In some case, you may want to use more human-readable string to specifying zero items. For example, it can be used 
+as "No apples", "No more...", "No one...". Because _gettext_ haven't way for this, my suggestion is to add 
+custom setting for language to `package.json` for example:
+
+```json
+{
+  "vuettext": {
+    "languages": {
+      "en_US": {
+        "zero_count": {
+          "prefix": "No",
+          "msgstr_idx": 1
+        }
+      }
+    }
+  }
+}
+```
+
+- `prefix` - first part of string
+- `msgstr_idx` - message string index (if you have `msgstr[0] "apple"` and `msgstr[1] "apples"`, according to settings
+in the example above "apples" will be used). For some strings you can add special comment like:
+
+```gettext
+#: zero_count_prefix: "No more"
+#: zero_count_msgstr_idx: 1
+#: test/fixtures/xgettext/call-translate-plural.js:8
+msgid "apple"
+msgid_plural "apple"
+msgstr[0] "apple"
+msgstr[1] "apples"
+```
+
+It can be added to _vuettext_ in future.
+
 ## Best practices
 
 ### String case
