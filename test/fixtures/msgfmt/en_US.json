@@ -1,0 +1,15 @@
+{
+ "apple": "apple | apples",
+ "of": "of",
+ "open": "open",
+ "closed": "closed",
+ "info": "info",
+ "change": "change",
+ "term": "term",
+ "tos": "definition",
+ "nested.description": "description",
+ "inline-plural-count": "counter | counters",
+ "inline plural with spaces": "pear | pears",
+ "inline-plural": "tomato | tomatoes",
+ "inline": "inline"
+}

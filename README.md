@@ -30,6 +30,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`vuettext help [COMMAND]`](#vuettext-help-command)
+* [`vuettext msgfmt [FILE]`](#vuettext-msgfmt-file)
 * [`vuettext msginit FILE`](#vuettext-msginit-file)
 * [`vuettext msgmerge`](#vuettext-msgmerge)
 * [`vuettext xgettext PATTERN`](#vuettext-xgettext-pattern)
@@ -50,6 +51,22 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
+
+## `vuettext msgfmt [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ vuettext msgfmt [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/msgfmt.ts](https://github.com/shimarulin/vuettext/blob/v0.4.0/src/commands/msgfmt.ts)_
 
 ## `vuettext msginit FILE`
 
