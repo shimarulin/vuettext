@@ -1,15 +1,17 @@
 {
- "apple": "яблоко | яблока | яблок",
- "of": "из",
- "open": "открыто",
- "closed": "закрыто",
- "info": "информация",
- "change": "изменить",
- "term": "термин",
- "tos": "определение",
- "nested.description": "описание",
- "inline-plural-count": "раз | раза | раз",
- "inline plural with spaces": "груша | груши | груш",
- "inline-plural": "томат | томата | томатов",
- "inline": "строчный"
+  "apple": "яблоко | яблока | яблок",
+  "of": "из",
+  "open": "открыто",
+  "closed": "закрыто",
+  "info": "информация",
+  "change": "изменить",
+  "term": "термин",
+  "tos": "определение",
+  "nested": {
+    "description": "описание"
+  },
+  "inline-plural-count": "раз | раза | раз",
+  "inline plural with spaces": "груша | груши | груш",
+  "inline-plural": "томат | томата | томатов",
+  "inline": "строчный"
 }

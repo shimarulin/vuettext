@@ -1,5 +1,7 @@
 import {Item} from 'pofile'
 
+import {addDeepKey} from '../common/add-deep-key'
+
 type VueI18nLocale = {
   [key: string]: object | string
 }
@@ -8,17 +10,12 @@ export const vueI18nFormatter = (items: Item[]) => {
   let content: VueI18nLocale = {}
 
   items.forEach(item => {
-    /**
-     * TODO: Check and remove dot from end of msgid string
-     * TODO: Create nested fields
-     */
-    if (typeof item.msgid_plural === 'string') {
-      content[item.msgid] = item.msgstr.join(' | ')
-    } else {
-      content[item.msgid] = item.msgstr.join('')
-    }
-
+    addDeepKey(
+      content,
+      item.msgid,
+      item.msgstr.join(typeof item.msgid_plural === 'string' ? ' | ' : '')
+    )
   })
 
-  return JSON.stringify(content, null, ' ')
+  return `${JSON.stringify(content, null, '  ')}\n`
 }
