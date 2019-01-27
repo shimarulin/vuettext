@@ -1,7 +1,8 @@
 # TODO List
 
-- [ ] `msgmerge` command and tests
+- [x] `msgmerge` command and tests
 - [ ] `msgfmt` command and tests
+- [ ] zero-count message for `msgfmt` command
 - [ ] Command line language selector (select language code or language and country code) for `msginit` command
   - https://www.npmjs.com/package/countries-list
   - https://www.npmjs.com/package/countryinfo
