@@ -29,7 +29,7 @@ export default class Msgfmt extends Command {
       char: 'o',
       required: true,
       default: getDefaultValue('LOCALES_DIR'),
-      description: getDescription('PATH', 'updated reference file (*.pot template)'),
+      description: getDescription('PATH', 'the locales directory'),
     }),
   }
 
