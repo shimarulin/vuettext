@@ -20,7 +20,7 @@ $ npm install -g vuettext
 $ vuettext COMMAND
 running command...
 $ vuettext (-v|--version|version)
-vuettext/0.5.0 linux-x64 node-v11.6.0
+vuettext/0.5.1 linux-x64 node-v11.6.0
 $ vuettext --help [COMMAND]
 USAGE
   $ vuettext COMMAND
@@ -68,13 +68,13 @@ OPTIONS
                        Needs to be surrounded with quotes to prevent shell globbing.
                        Guide to globs: https://github.com/isaacs/node-glob#glob-primer
 
-  -o, --output=output  (required) [default: i18n/locales] Path to updated reference file (*.pot template)
+  -o, --output=output  (required) [default: i18n/locales] Path to the locales directory
 
   --ignore=ignore      Glob pattern to specify ignored files.
                        Expected string or separated comma strings
 ```
 
-_See code: [src/commands/msgfmt.ts](https://github.com/shimarulin/vuettext/blob/v0.5.0/src/commands/msgfmt.ts)_
+_See code: [src/commands/msgfmt.ts](https://github.com/shimarulin/vuettext/blob/v0.5.1/src/commands/msgfmt.ts)_
 
 ## `vuettext msginit FILE`
 
@@ -107,7 +107,7 @@ OPTIONS
       Path to output file
 ```
 
-_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.5.0/src/commands/msginit.ts)_
+_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.5.1/src/commands/msginit.ts)_
 
 ## `vuettext msgmerge`
 
@@ -131,7 +131,7 @@ OPTIONS
                    Expected string or separated comma strings
 ```
 
-_See code: [src/commands/msgmerge.ts](https://github.com/shimarulin/vuettext/blob/v0.5.0/src/commands/msgmerge.ts)_
+_See code: [src/commands/msgmerge.ts](https://github.com/shimarulin/vuettext/blob/v0.5.1/src/commands/msgmerge.ts)_
 
 ## `vuettext xgettext PATTERN`
 
@@ -155,5 +155,5 @@ OPTIONS
                        Expected string or separated comma strings
 ```
 
-_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.5.0/src/commands/xgettext.ts)_
+_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.5.1/src/commands/xgettext.ts)_
 <!-- commandsstop -->

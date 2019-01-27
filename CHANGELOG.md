@@ -1,3 +1,7 @@
+## [0.5.1](https://github.com/shimarulin/vuettext/compare/v0.5.0...v0.5.1) (2019-01-27)
+
+
+
 # [0.5.0](https://github.com/shimarulin/vuettext/compare/v0.4.0...v0.5.0) (2019-01-27)
 
 
