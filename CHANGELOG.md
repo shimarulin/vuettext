@@ -1,3 +1,13 @@
+# [0.5.0](https://github.com/shimarulin/vuettext/compare/v0.4.0...v0.5.0) (2019-01-27)
+
+
+### Features
+
+* **msgfmt:** add msgfmt command ([59a9e32](https://github.com/shimarulin/vuettext/commit/59a9e32))
+* **msgfmt:** add nested messages to msgfmt output ([3ee359f](https://github.com/shimarulin/vuettext/commit/3ee359f))
+
+
+
 # [0.4.0](https://github.com/shimarulin/vuettext/compare/v0.3.0...v0.4.0) (2019-01-25)
 
 

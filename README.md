@@ -20,7 +20,7 @@ $ npm install -g vuettext
 $ vuettext COMMAND
 running command...
 $ vuettext (-v|--version|version)
-vuettext/0.4.0 linux-x64 node-v11.6.0
+vuettext/0.5.0 linux-x64 node-v11.6.0
 $ vuettext --help [COMMAND]
 USAGE
   $ vuettext COMMAND
@@ -30,7 +30,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`vuettext help [COMMAND]`](#vuettext-help-command)
-* [`vuettext msgfmt [FILE]`](#vuettext-msgfmt-file)
+* [`vuettext msgfmt`](#vuettext-msgfmt)
 * [`vuettext msginit FILE`](#vuettext-msginit-file)
 * [`vuettext msgmerge`](#vuettext-msgmerge)
 * [`vuettext xgettext PATTERN`](#vuettext-xgettext-pattern)
@@ -52,21 +52,29 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
 
-## `vuettext msgfmt [FILE]`
+## `vuettext msgfmt`
 
-describe the command here
+Convert *.po messages to vue-i18n format
 
 ```
 USAGE
-  $ vuettext msgfmt [FILE]
+  $ vuettext msgfmt
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help           show CLI help
+
+  -i, --input=input    (required) [default: i18n/messages/*.po] Glob pattern to specify *.po files. Expected string or
+                       separated comma strings
+                       Needs to be surrounded with quotes to prevent shell globbing.
+                       Guide to globs: https://github.com/isaacs/node-glob#glob-primer
+
+  -o, --output=output  (required) [default: i18n/locales] Path to updated reference file (*.pot template)
+
+  --ignore=ignore      Glob pattern to specify ignored files.
+                       Expected string or separated comma strings
 ```
 
-_See code: [src/commands/msgfmt.ts](https://github.com/shimarulin/vuettext/blob/v0.4.0/src/commands/msgfmt.ts)_
+_See code: [src/commands/msgfmt.ts](https://github.com/shimarulin/vuettext/blob/v0.5.0/src/commands/msgfmt.ts)_
 
 ## `vuettext msginit FILE`
 
@@ -99,7 +107,7 @@ OPTIONS
       Path to output file
 ```
 
-_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.4.0/src/commands/msginit.ts)_
+_See code: [src/commands/msginit.ts](https://github.com/shimarulin/vuettext/blob/v0.5.0/src/commands/msginit.ts)_
 
 ## `vuettext msgmerge`
 
@@ -123,7 +131,7 @@ OPTIONS
                    Expected string or separated comma strings
 ```
 
-_See code: [src/commands/msgmerge.ts](https://github.com/shimarulin/vuettext/blob/v0.4.0/src/commands/msgmerge.ts)_
+_See code: [src/commands/msgmerge.ts](https://github.com/shimarulin/vuettext/blob/v0.5.0/src/commands/msgmerge.ts)_
 
 ## `vuettext xgettext PATTERN`
 
@@ -147,5 +155,5 @@ OPTIONS
                        Expected string or separated comma strings
 ```
 
-_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.4.0/src/commands/xgettext.ts)_
+_See code: [src/commands/xgettext.ts](https://github.com/shimarulin/vuettext/blob/v0.5.0/src/commands/xgettext.ts)_
 <!-- commandsstop -->
