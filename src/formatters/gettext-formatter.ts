@@ -13,12 +13,11 @@ const getHeader = () => {
   const userName = execSync('git config user.name').toString().trim()
   const userEmail = execSync('git config user.email').toString().trim()
 
-  return `# SOME DESCRIPTIVE TITLE.
+  return `# Translations template for ${pkg.name} package.
 # Copyright (C) ${dateYear}
 # This file is distributed under the same license as the ${pkg.name} package.
 # ${userName} <${userEmail}>, ${dateYear}.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: ${pkg.name} ${pkg.version}\\n"
