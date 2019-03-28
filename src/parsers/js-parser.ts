@@ -1,4 +1,5 @@
-import {Node, parse, Token} from 'acorn/dist/acorn'
+import {Parser, Node, Token} from 'acorn'
+import dynamicImport from 'acorn-dynamic-import';
 
 import {ParserBase, SourceStringMetadataList} from '../common/parser-base'
 
@@ -54,7 +55,7 @@ export class JsParser extends ParserBase {
   }
 
   parse() {
-    this.ast = parse(typeof this.content === 'string' ? this.content : '', {
+    this.ast = Parser.extend(dynamicImport).parse(typeof this.content === 'string' ? this.content : '', {
       ecmaVersion: 9,
       sourceType: 'module',
       locations: true,
@@ -140,6 +141,7 @@ export class JsParser extends ParserBase {
     const isMember = expression.callee.type && expression.callee.type === 'MemberExpression'
 
     const name = isMember ? expression.callee.property.name : expression.callee.name
+
     if (name === '$t') {
       const value = expression.arguments[0].value
       result[value] = {
