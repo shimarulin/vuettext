@@ -1,5 +1,5 @@
-import {Parser, Node, Token} from 'acorn'
-import dynamicImport from 'acorn-dynamic-import';
+import {Node, Parser, Token} from 'acorn'
+import dynamicImport from 'acorn-dynamic-import'
 
 import {ParserBase, SourceStringMetadataList} from '../common/parser-base'
 

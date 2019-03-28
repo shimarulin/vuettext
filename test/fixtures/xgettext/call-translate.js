@@ -20,6 +20,6 @@ export default {
       this.isVisible = true
     },
 
-    dynamicImportTest: () => import('external-package')
+    arrowFunction: () => import('external-package'),
   },
 }
