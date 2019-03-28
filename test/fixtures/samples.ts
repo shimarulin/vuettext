@@ -59,7 +59,11 @@ msgstr ""
 
 `
 
-export const sampleJsFile = `export default {
+export const sampleJsFile = `export class myClass {
+  classFields = 'this is a class field'
+}
+
+export default {
   data: () => ({
     isVisible: false,
   }),
