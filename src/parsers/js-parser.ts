@@ -141,7 +141,6 @@ export class JsParser extends ParserBase {
     const isMember = expression.callee.type && expression.callee.type === 'MemberExpression'
 
     const name = isMember ? expression.callee.property.name : expression.callee.name
-
     if (name === '$t') {
       const value = expression.arguments[0].value
       result[value] = {
