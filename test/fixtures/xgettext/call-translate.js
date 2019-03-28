@@ -19,5 +19,7 @@ export default {
     show () {
       this.isVisible = true
     },
+
+    dynamicImportTest: () => import('external-package')
   },
 }
