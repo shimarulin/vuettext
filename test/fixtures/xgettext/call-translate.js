@@ -1,3 +1,5 @@
+const hi = $t('hi.key');
+
 export default {
   data: () => ({
     isVisible: false,
