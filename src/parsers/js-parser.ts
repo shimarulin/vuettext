@@ -59,7 +59,10 @@ export class JsParser extends ParserBase {
   }
 
   parse() {
-    this.ast = Parser.extend(classFields, dynamicImport).parse(typeof this.content === 'string' ? this.content : '', {
+    this.ast = Parser.extend(
+      dynamicImport,
+      classFields,
+    ).parse(typeof this.content === 'string' ? this.content : '', {
       ecmaVersion: 9,
       sourceType: 'module',
       locations: true,
