@@ -61,6 +61,10 @@ msgstr ""
 
 export const sampleJsFile = `const hi = $t('hi.key');
 
+export class myClass {
+  classFields = 'this is a class field'
+}
+
 export default {
   data: () => ({
     isVisible: false,

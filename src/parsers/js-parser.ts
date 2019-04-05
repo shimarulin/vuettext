@@ -1,6 +1,8 @@
-import {Node, parse, Token} from 'acorn/dist/acorn'
+import {Node, Parser, Token} from 'acorn/dist/acorn'
 
 import {ParserBase, SourceStringMetadataList} from '../common/parser-base'
+
+const classFields = require('acorn-class-fields')
 
 interface Property {
   name: string
@@ -56,7 +58,7 @@ export class JsParser extends ParserBase {
   }
 
   parse() {
-    this.ast = parse(typeof this.content === 'string' ? this.content : '', {
+    this.ast = Parser.extend(classFields).parse(typeof this.content === 'string' ? this.content : '', {
       ecmaVersion: 9,
       sourceType: 'module',
       locations: true,
