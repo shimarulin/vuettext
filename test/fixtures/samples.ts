@@ -59,7 +59,9 @@ msgstr ""
 
 `
 
-export const sampleJsFile = `export class myClass {
+export const sampleJsFile = `const hi = $t('hi.key');
+
+export class myClass {
   classFields = 'this is a class field'
 }
 
