@@ -86,6 +86,8 @@ export default {
     show () {
       this.isVisible = true
     },
+
+    arrowFunction: () => import('external-package'),
   },
 }
 `
