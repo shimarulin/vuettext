@@ -1,3 +1,19 @@
+# [0.6.0](https://github.com/shimarulin/vuettext/compare/v0.5.1...v0.6.0) (2019-04-05)
+
+
+### Bug Fixes
+
+* **circleci:** broken CircleCI config ([fd8a300](https://github.com/shimarulin/vuettext/commit/fd8a300))
+
+
+### Features
+
+* Add class fields support ([#19](https://github.com/shimarulin/vuettext/issues/19)) ([44e8f60](https://github.com/shimarulin/vuettext/commit/44e8f60))
+* add support to dynamic imports ([a08f146](https://github.com/shimarulin/vuettext/commit/a08f146)), closes [#14](https://github.com/shimarulin/vuettext/issues/14)
+* Add support to parse variable declarations ([322449c](https://github.com/shimarulin/vuettext/commit/322449c)), closes [#16](https://github.com/shimarulin/vuettext/issues/16)
+
+
+
 ## [0.5.1](https://github.com/shimarulin/vuettext/compare/v0.5.0...v0.5.1) (2019-01-27)
 
 
