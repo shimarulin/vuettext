@@ -13,14 +13,14 @@ describe('JsParser', () => {
       expect(ctx.parser.result).to.deep.equal({
         open: {
           file: 'test/fixtures/xgettext/call-translate.js',
-          line: 7,
+          line: 11,
           origin: '$t',
           type: 'singular',
           value: 'open'
         },
         closed: {
           file: 'test/fixtures/xgettext/call-translate.js',
-          line: 7,
+          line: 11,
           origin: '$t',
           type: 'singular',
           value: 'closed'

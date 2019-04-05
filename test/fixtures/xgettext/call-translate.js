@@ -1,3 +1,7 @@
+export class myClass {
+  classFields = 'this is a class field'
+}
+
 export default {
   data: () => ({
     isVisible: false,
