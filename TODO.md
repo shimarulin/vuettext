@@ -15,3 +15,4 @@
   - https://www.gnu.org/software/gettext/manual/html_node/msginit-Invocation.html
 - [ ] ? Improve package publishing
   - https://github.com/sindresorhus/np
+- [ ] TypeScript parsing with https://github.com/phenomnomnominal/tsquery 
